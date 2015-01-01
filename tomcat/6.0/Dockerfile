@@ -1,6 +1,6 @@
-FROM jolokia/java-jolokia:7
+FROM snasello/docker-debian-java6
 
-MAINTAINER roland@jolokia.org
+MAINTAINER cbueno81@gmail.com
 
 EXPOSE 8080 8778
 
@@ -15,7 +15,7 @@ RUN wget http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/a
 ADD tomcat-users.xml /opt/apache-tomcat-${TOMCAT_VERSION}/conf/
 
 # Jolokia config
-ADD jolokia.properties /opt/jolokia/jolokia.properties
+# ADD jolokia.properties /opt/jolokia/jolokia.properties
 
 # Startup script
 ADD deploy-and-run.sh /opt/apache-tomcat-${TOMCAT_VERSION}/bin/
